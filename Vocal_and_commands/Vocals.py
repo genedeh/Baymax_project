@@ -10,6 +10,7 @@ class Vocals:
         print(text)
         engine.say(text)
         engine.runAndWait()
+        return text
 
     def take_command(self):
         recognizer = sr.Recognizer()
@@ -26,4 +27,3 @@ class Vocals:
             self.speak("Sorry I did not here you, come again.")
             query = None
         return query
-
