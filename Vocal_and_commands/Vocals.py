@@ -20,15 +20,15 @@ class Vocals:
             audio = recognizer.record(source, duration=3.10)
 
         try:
-            self.speak("RECOGNIZING SPEECH...")
+            self.speak("RECOGNIZING...")
             query = recognizer.recognize_google(audio, language="en-us")
             print(f"{query.capitalize()}.\n")
 
         except Exception as e:
             self.speak("Sorry I did not here you, come again.")
-            query = None
+            query = ''
         return query
 
 
 v = Vocals()
-v.take_command()
+print(v.take_command())
