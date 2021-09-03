@@ -17,7 +17,7 @@ class Vocals:
         with sr.Microphone() as source:
             print(f'==========\n"INITIALIZING"\n==========')
             self.speak(r",I AM LISTENING....")
-            audio = recognizer.record(source, duration=3.10)
+            audio = recognizer.record(source, duration=4.10)
 
         try:
             self.speak("RECOGNIZING...")
@@ -28,7 +28,3 @@ class Vocals:
             self.speak("Sorry I did not here you, come again.")
             query = ''
         return query
-
-
-v = Vocals()
-print(v.take_command())
