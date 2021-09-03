@@ -28,3 +28,6 @@ class Vocals:
             self.speak("Sorry I did not here you, come again.")
             query = ''
         return query
+
+v = Vocals()
+v.take_command()

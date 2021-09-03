@@ -7,5 +7,5 @@ class VocalsTest(unittest.TestCase):
         self.vocal = Vocals()
 
     def test_speak_type(self):
-        speech = self.vocal.speak('test')
+        speech = self.vocal.speak('')
         self.assertIsInstance(speech, str)
