@@ -71,3 +71,22 @@ class WindowsAppOpening(AppOpening):
         return f"alright i'll open 'Windows Store'"
 
 
+class PersonalAppOpening(AppOpening):
+    def __set_up(self):
+        self.apps = {'Alarms and clock': 'Microsoft.WindowsAlarms_8wekyb3d8bbwe!App',
+                     'Calculator': 'Microsoft.WindowsCalculator_8wekyb3d8bbwe!App',
+                     'Camera': 'Microsoft.WindowsCamera_8wekyb3d8bbwe!App',
+                     'Contact Support': 'Windows.ContactSupport_cw5n1h2txyewy!App',
+                     'Cortana': 'Microsoft.Windows.Cortana_cw5n1h2txyewy!CortanaUI',
+                     'Facebook': 'Microsoft.MSFacebook_8wekyb3d8bbwe!x82a236355bd9df11a84400237de2db9e',
+                     'File Explorer': 'c5e2524a-ea46-4f67-841f-6a9465d9d515_cw5n1h2txyewy!App',
+                     'Groove Music': 'Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic',
+                     'Maps': 'Microsoft.WindowsMaps_8wekyb3d8bbwe!App',
+                     'Movies and TV	': 'Microsoft.ZuneVideo_8wekyb3d8bbwe!Microsoft.ZuneVideo',
+                     'News': 'Microsoft.BingNews_8wekyb3d8bbwe!AppexNews',
+                     'Photos': 'Microsoft.Windows.Photos_8wekyb3d8bbwe!App',
+                     'Settings': '2a4e62d8-8809-4787-89f8-69d0f01654fb_8wekyb3d8bbwe!App',
+                     'Skype': 'Microsoft.SkypeApp_kzf8qxf38zg5c!Skype.AppId',
+                     'Voice recorder': 'Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe!App',
+                     'Weather': 'Microsoft.BingWeather_8wekyb3d8bbwe!App',
+                     'Xbox': 'Microsoft.XboxApp_8wekyb3d8bbwe!Microsoft.XboxApp'}
