@@ -24,7 +24,7 @@ class InformationAbstraction(ABC):
 class TestInformation(InformationAbstraction):
     def get_information(self, info_name):
         if info_name in self.information:
-            return  self.information.get(info_name)
+            return self.information.get(info_name)
         else:
             return "not found"
 
