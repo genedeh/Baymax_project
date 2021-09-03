@@ -3,7 +3,6 @@ from abc import ABC, abstractmethod
 
 
 class AppOpening(ABC):
-    @abstractmethod
     def __set_up(self):
         pass
 
