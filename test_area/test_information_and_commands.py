@@ -15,5 +15,5 @@ class InfoTest(unittest.TestCase):
         self.assertIn(test_set_info, self.test_info.information)
 
     def test_changed_info(self):
-        test_changed_info = self.test_info.change_information('age', '13')
+        self.test_info.change_information('age', '13')
         print(self.test_info.information)
