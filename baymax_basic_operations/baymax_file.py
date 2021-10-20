@@ -15,6 +15,12 @@ class FileManager:
         vocal.speak(f'{filename}, has been read')
         return content
 
+    def update_file(self, filename: str, content: str):
+        with open(f'{filename}', '+a') as file:
+            file.write(f" {content}")
+        vocal = Vocals()
+        vocal.speak(f'{filename}, has been updated')
+
 
 fm = FileManager()
-print(fm.read_file('test.txt'))
+fm.update_file('test.txt', 'Added an update method')
