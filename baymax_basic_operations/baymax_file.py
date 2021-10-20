@@ -1,3 +1,5 @@
+import os
+
 from Vocal_and_commands.Vocals import Vocals
 
 
@@ -21,6 +23,11 @@ class FileManager:
         vocal = Vocals()
         vocal.speak(f'{filename}, has been updated')
 
+    def delete_file(self, filename: str):
+        os.remove(filename)
+        vocal = Vocals()
+        vocal.speak(f'{filename}, has been deleted')
+
 
 fm = FileManager()
-fm.update_file('test.txt', 'Added an update method')
+fm.delete_file('test.txt')
