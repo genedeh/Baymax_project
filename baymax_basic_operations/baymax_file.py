@@ -55,6 +55,14 @@ class DirectoryManger:
         except OSError as error:
             self.vocal.speak(error)
 
+    def delete_dir(self, dir_name):
+        try:
+            os.remove(dir_name)
+            self.vocal.speak("% s removed successfully" % dir_name)
+        except OSError as error:
+            self.vocal.speak(error)
+            self.vocal.speak("File path can not be removed")
+
 
 dm = DirectoryManger()
-dm.rename_dir('new_test', 'test')
+dm.delete_dir('test2')
