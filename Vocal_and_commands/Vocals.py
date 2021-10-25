@@ -25,6 +25,6 @@ class Vocals:
             print(f"{query.capitalize()}.\n")
 
         except Exception as e:
-            self.speak("Sorry I did not here you, come again.")
+            self.speak("Sorry I did not hear you, come again.")
             query = ''
         return query
