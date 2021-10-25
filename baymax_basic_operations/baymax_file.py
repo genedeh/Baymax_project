@@ -42,6 +42,19 @@ class DirectoryManger:
         self.vocal.speak(f"This are the files in {dir_name} directory")
         pprint(dir_list, width=10)
 
+    def rename_dir(self, old_dir, new_dir):
+        try:
+            os.rename(old_dir, new_dir)
+            self.vocal.speak("Source path renamed to destination was successfull.")
+        except IsADirectoryError:
+            self.vocal.speak("Source is a file but destination is a directory.")
+        except NotADirectoryError:
+            self.vocal.speak("Source is a directory but destination is a file.")
+        except PermissionError:
+            self.vocal.speak("Operation not permitted.")
+        except OSError as error:
+            self.vocal.speak(error)
+
 
 dm = DirectoryManger()
-dm.list_files_in_dir('test')
+dm.rename_dir('new_test', 'test')
