@@ -1,4 +1,5 @@
 import os
+from pprint import pprint
 
 from Vocal_and_commands.Vocals import Vocals
 
@@ -36,6 +37,11 @@ class DirectoryManger:
         os.mkdir(f'{dir_name}')
         self.vocal.speak(f"{dir_name} directory has been created")
 
+    def list_files_in_dir(self, dir_name):
+        dir_list = os.listdir(dir_name)
+        self.vocal.speak(f"This are the files in {dir_name} directory")
+        pprint(dir_list, width=10)
+
 
 dm = DirectoryManger()
-dm.create_dir('test')
+dm.list_files_in_dir('test')
