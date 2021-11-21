@@ -1,3 +1,5 @@
+from pprint import pprint
+
 import speech_recognition as sr
 import pyttsx3
 
@@ -5,9 +7,12 @@ import pyttsx3
 class Vocals:
     def speak(self, text):
         engine = pyttsx3.init()
-        engine.setProperty('rate', 100.10)
-        engine.setProperty('volume', 1.9)
-        print(text)
+        engine.setProperty('rate', 197)
+        engine.setProperty('volume', 2.7)
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[1].id)
+        print(f"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        pprint(text)
         engine.say(text)
         engine.runAndWait()
         return text
