@@ -1,9 +1,14 @@
 # Import Required Library
+from pprint import pprint
+import sys
+
 from Vocal_and_commands.Vocals import Vocals
 from tkinter import *
 import datetime
 import time
 import winsound
+import googletrans
+from googletrans import Translator
 from threading import *
 
 # Create Object
@@ -89,4 +94,28 @@ def run():
     root.mainloop()
 
 
-run()
+class Translator:
+    def __init__(self, languages=googletrans.LANGUAGES):
+        self.languages = languages
+
+    def translate(self, sentence, to_language, from_language='en'):
+        translator = Translator()
+        print('translating stage 1')
+        if from_language in self.languages and to_language in self.languages:
+            sys.setrecursionlimit(10 ** 6)
+            print('translating stage 2')
+            translated_text = translator.translate(sentence, from_language=from_language, to_language=to_language)
+
+            text = translated_text.text
+            print(f'translating stage 1 {text} text')
+            print(text)
+        else:
+            print("dose not exists")
+
+    def get_languages(self):
+        return pprint(self.languages, width=100)
+
+
+class WebsiteDirector:
+    def __init__(self, text: str):
+        self.text = text

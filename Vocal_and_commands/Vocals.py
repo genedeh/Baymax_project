@@ -25,7 +25,6 @@ class Vocals:
             audio = recognizer.record(source, duration=4.10)
 
         try:
-            self.speak("RECOGNIZING...")
             query = recognizer.recognize_google(audio, language="en-us")
             print(f"{query.capitalize()}.\n")
 
